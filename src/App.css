@@ -5,3 +5,37 @@
     flex-direction: column;
     justify-content: space-between;
 }
+
+.content {
+    width: 100%;
+    max-width: 700px;
+    flex: 1;
+
+    margin: 3em auto;
+    background-color: #e73c7e;
+}
+
+.content-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 1.5em;
+}
+
+.adicionar-task {
+    color:#23d5ab;
+    border: none;
+    padding: 0.3em;
+    transition: 1s;
+    font-weight: bold;
+}
+.adicionar-task:hover {
+    background-color: #23d5ab;
+    color: #fff;
+}
+
+.total-tasks {
+    color: #83889A;
+    font-weight: 600;
+    font-size: 1em;
+}
