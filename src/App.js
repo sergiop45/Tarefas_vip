@@ -4,6 +4,7 @@ import Footer from './components/Footer';
 import Header from './components/Header';
 import Table from './components/Table';
 import TasksCount from './components/TasksCount';
+import Modal from './components/Modal';
 
 function App() {
   return (
@@ -28,6 +29,7 @@ function App() {
       </main>
 
       <Footer />
+      <Modal />
 
     </div>
   );
