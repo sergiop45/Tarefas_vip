@@ -3,7 +3,7 @@ import './modal.css';
 import Button from '../Button';
 import FormContent from './FormContent';
 
-const Modal = () => {
+const Modal = ({ closemodal }) => {
   return (
     <div className='modal-back'>
         <article className='modal-container'>
@@ -32,7 +32,7 @@ const Modal = () => {
                 <div className='modal-buttons'>
 
                     <Button 
-                    onclick={() => {}}
+                    onclick={() => closemodal(false)}
                     classname='btn-cancel'
                     title='Cancelar'
                     />

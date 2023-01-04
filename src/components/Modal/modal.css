@@ -78,3 +78,11 @@ form .modal-buttons {
 .modal-buttons .btn-cancel:hover {
     background-color: #de3f4e;
 }
+
+.modal-buttons .btn-save {
+    background-color: #34ca00;
+}
+
+.modal-buttons .btn-save:hover {
+    background-color: #289061;
+}

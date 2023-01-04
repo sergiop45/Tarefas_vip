@@ -5,8 +5,13 @@ import Header from './components/Header';
 import Table from './components/Table';
 import TasksCount from './components/TasksCount';
 import Modal from './components/Modal';
+import { useState } from 'react';
+
 
 function App() {
+
+  const [showModal, setshowModal] = useState(false);
+
   return (
     <div className="container">
       
@@ -19,7 +24,7 @@ function App() {
           <Button 
           title='+ Adicionar Tarefa'
           classname='adicionar-task'
-          onclick={() => {alert('teste button')}}
+          onclick={() => setshowModal(true)}
           />
           <TasksCount Tasks={10} />
         </div>
@@ -29,7 +34,9 @@ function App() {
       </main>
 
       <Footer />
-      <Modal />
+
+      {showModal && <Modal closemodal={setshowModal} />}
+      
 
     </div>
   );
