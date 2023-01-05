@@ -2,8 +2,13 @@ import React from 'react';
 import './modal.css';
 import Button from '../Button';
 import FormContent from './FormContent';
+import { useState } from 'react';
 
-const Modal = ({ closemodal }) => {
+const Modal = ({ closemodal, saveTask }) => {
+
+  const [description, setDescription] = useState('');
+  const [date, setDate] = useState('');
+
   return (
     <div className='modal-back'>
         <article className='modal-container'>
@@ -15,8 +20,8 @@ const Modal = ({ closemodal }) => {
                 type='text'
                 id='description'
                 placeholder='Descrição'
-                value=''
-                onchange={() => {}}
+                value={description}
+                onchange={e => setDescription(e.target.value)}
                 label="Descrição da tarefa"
                 />
 
@@ -24,8 +29,8 @@ const Modal = ({ closemodal }) => {
                 <FormContent 
                 type='date'
                 id='date'
-                value=''
-                onchange={() => {}}
+                value={date}
+                onchange={e => setDate(e.target.value)}
                 label="Data"
                 />
 
@@ -38,7 +43,7 @@ const Modal = ({ closemodal }) => {
                     />
 
                     <Button 
-                    onclick={() => {}}
+                    onclick={() => saveTask(description, date)}
                     classname='btn-save'
                     title='Salvar'
                     />

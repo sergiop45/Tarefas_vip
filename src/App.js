@@ -6,11 +6,24 @@ import Table from './components/Table';
 import TasksCount from './components/TasksCount';
 import Modal from './components/Modal';
 import { useState } from 'react';
+import { saveTaskStorage } from './Storage';
+
 
 
 function App() {
 
   const [showModal, setshowModal] = useState(false);
+
+  function saveTask(description, date) {
+
+    if(!description || !date) {
+      alert('Preencha todos os campos!');
+      return;
+    } else {
+      saveTaskStorage(description, date);
+    }
+
+}
 
   return (
     <div className="container">
@@ -35,7 +48,11 @@ function App() {
 
       <Footer />
 
-      {showModal && <Modal closemodal={setshowModal} />}
+      {showModal && 
+      <Modal 
+      closemodal={setshowModal} 
+      saveTask={saveTask}
+      />}
       
 
     </div>
