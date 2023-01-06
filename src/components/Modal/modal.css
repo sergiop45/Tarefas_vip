@@ -1,0 +1,88 @@
+.modal-back {
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    background-color: rgba(0,0,0,0.3);
+    backdrop-filter: blur(5px);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.modal-container {
+    width: 100%;
+    max-width: 700px;
+    border-radius: 2em;
+    padding: 2em;
+    background-color: #ffffff;
+    color: #000;
+    display: flex;
+    flex-direction: column;
+}
+
+.modal-container form {
+    margin-top: 2em;
+    display: flex;
+    flex-direction: column;
+}
+
+.modal-container form .form-content {
+    display: flex;
+    flex-direction: column;
+}
+
+.modal-container form .form-content:nth-child(2) {
+    margin-top: 1.3em;
+}
+
+.modal-title {
+    color: #0268E2;
+    text-shadow: 1px 1px 2px 0px rgba(0,0,0,0.3);
+}
+
+form .form-content label {
+    font-size: 0.9em;
+    font-weight: bold;
+    color:#000;
+    margin-bottom: 0.5em;
+}
+
+form .form-content input {
+    border: 1.2px solid #ddd;
+    box-shadow: 1px 1px 1px 0px rgba(0,0,0,0.2);
+}
+
+form .form-content input:focus {
+    box-shadow: inset 1px 1px 2px 1px rgba(0,0,0,0.3);
+}
+
+
+/*Buttons*/
+
+form .modal-buttons {
+    display: flex;
+    margin-top: 3em;
+    align-self: flex-end;
+}
+
+.modal-buttons .btn-cancel {
+    color: #888;
+    background: transparent;
+    margin-right: 1em;
+}
+
+.modal-buttons .btn-cancel:hover {
+    background-color: #de3f4e;
+}
+
+.modal-buttons .btn-save {
+    background-color: #34ca00;
+}
+
+.modal-buttons .btn-save:hover {
+    background-color: #289061;
+}
