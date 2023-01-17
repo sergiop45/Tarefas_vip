@@ -7,6 +7,7 @@ import TasksCount from './components/TasksCount';
 import Modal from './components/Modal';
 import { useState, useEffect } from 'react';
 import { saveTaskStorage, getTasks, deleteTaskStorage } from './Storage';
+import { Alert } from './components/Alert';
 
 
 
@@ -16,6 +17,8 @@ function App() {
   const [showModal, setshowModal] = useState(false);
   const [statusMessage, setStatusMessage] = useState('');
   const [tasksCount, setTasksCount] = useState([]);
+  const [showAlert, setShowAlert] = useState(true);
+  const [messageAlert, setMessageAlert] = useState('');
 
   function loadTasks() {
     const allTasks = getTasks();
@@ -42,12 +45,14 @@ function App() {
   function saveTask(description, date) {
 
     if(!description || !date) {
-      alert('Preencha todos os campos!');
+      setMessageAlert('Preencha toos os campos!')
+      setShowAlert(true);
       return;
     } else {
       saveTaskStorage(tasks, description, date);
       loadTasks();
       setshowModal(false);
+      
     }
 
 }
@@ -55,6 +60,12 @@ function App() {
   useEffect(() => {
     loadTasks()
   }, []);
+
+  useEffect(() => {
+    setTimeout(() => {
+      setShowAlert(false);
+    }, 3000);
+  }, [showAlert]);
 
   return (
     <div className="container">
@@ -89,6 +100,11 @@ function App() {
       saveTask={saveTask}
       />}
       
+      {
+        showAlert && (
+          <Alert message={messageAlert} closeAlert={() => setShowAlert(false)} />
+        )
+      }
 
     </div>
   );
